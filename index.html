@@ -99,12 +99,13 @@
 
         <!-- MAP -->
         <a-plane
+          class="clickable"
           position="-0.30 -0.45 0.02"
           width="0.16"
           height="0.16"
           color="#22c55e"
           onclick="
-            window.location.href = 'https://maps.google.com/?q=Davanagere'
+            window.open('https://maps.google.com/?q=Davanagere', '_blank')
           "
         >
           <a-image
@@ -118,11 +119,12 @@
 
         <!-- CALL -->
         <a-plane
+          class="clickable"
           position="-0.10 -0.45 0.02"
           width="0.16"
           height="0.16"
           color="#0ea5e9"
-          onclick="window.location.href = 'tel:9741366349'"
+          onclick="window.open('tel:9741366349', '_self')"
         >
           <a-image
             src="icons/call.png"
@@ -135,11 +137,12 @@
 
         <!-- WHATSAPP -->
         <a-plane
+          class="clickable"
           position="0.10 -0.45 0.02"
           width="0.16"
           height="0.16"
           color="#25D366"
-          onclick="window.location.href = 'https://wa.me/919741366349'"
+          onclick="window.open('https://wa.me/919741366349', '_blank')"
         >
           <a-image
             src="icons/whatsapp.png"
@@ -151,12 +154,13 @@
         </a-plane>
 
         <!-- INSTAGRAM -->
-        <a-plane
+        <<a-plane
+          class="clickable"
           position="0.30 -0.45 0.02"
           width="0.16"
           height="0.16"
           color="#e11d48"
-          onclick="window.location.href = 'https://instagram.com/YOUR_USERNAME'"
+          onclick="window.open('https://instagram.com/YOUR_USERNAME', '_blank')"
         >
           <a-image
             src="icons/instagram.png"
