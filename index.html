@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- A-Frame -->
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
     <!-- MindAR -->
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -21,10 +21,10 @@
         bottom: 10px;
         width: 100%;
         text-align: center;
-        color: #fff;
-        font-family: Arial;
+        color: white;
         background: rgba(0, 0, 0, 0.6);
         padding: 10px;
+        font-family: Arial;
         z-index: 999;
       }
     </style>
@@ -36,17 +36,18 @@
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: true"
     >
+      <!-- CAMERA (WORKING CONFIG) -->
       <a-camera
         position="0 0 0"
         look-controls="enabled: false"
-        cursor="fuse: false; rayOrigin: mouse"
-        raycaster="objects: .clickable"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="near: 10; far: 10000; objects: .clickable"
       >
       </a-camera>
 
       <!-- IMAGE TARGET -->
-      <a-entity mindar-image-target="targetIndex: 0">
-        <!-- CARD BASE -->
+      <a-entity id="card-target" mindar-image-target="targetIndex: 0">
+        <!-- CARD -->
         <a-plane
           src="card.png.jpg"
           width="1"
@@ -56,7 +57,7 @@
         >
         </a-plane>
 
-        <!-- PROFILE PANEL (RIGHT SIDE) -->
+        <!-- PROFILE PANEL -->
         <a-plane
           width="0.6"
           height="0.45"
@@ -64,145 +65,99 @@
           color="#0f172a"
           animation="property: position; from: 1.3 0 0; to: 0.85 0 0; dur: 800; easing: easeOutElastic"
         >
-          <!-- NAME -->
           <a-text
             value="Abdul Azeez Razvi"
             position="0 0.15 0.01"
             align="center"
             color="#38bdf8"
             width="1.2"
-          >
-          </a-text>
+          ></a-text>
 
-          <!-- ROLE -->
           <a-text
             value="Raza Online Services"
             position="0 0.05 0.01"
             align="center"
             color="#ffffff"
             width="1"
-          >
-          </a-text>
+          ></a-text>
 
-          <!-- LOCATION -->
           <a-text
             value="Davanagere"
             position="0 -0.05 0.01"
             align="center"
             color="#94a3b8"
             width="1"
-          >
-          </a-text>
+          ></a-text>
         </a-plane>
 
-        <!-- ICON BUTTONS (BOTTOM ROW) -->
-
-        <a-plane
+        <!-- ICON BUTTONS -->
+        <a-image
           id="btn-map"
           class="clickable"
-          position="-0.30 -0.45 0.05"
-          width="0.16"
-          height="0.16"
-          color="#22c55e"
-        >
-          <a-image
-            src="icons/map.png"
-            width="0.1"
-            height="0.1"
-            position="0 0 0.01"
-          ></a-image>
-        </a-plane>
+          src="icons/map.png"
+          width="0.18"
+          height="0.18"
+          position="-0.30 -0.45 0.2"
+        ></a-image>
 
-        <a-plane
+        <a-image
           id="btn-call"
           class="clickable"
-          position="-0.10 -0.45 0.05"
-          width="0.16"
-          height="0.16"
-          color="#0ea5e9"
-        >
-          <a-image
-            src="icons/call.png"
-            width="0.1"
-            height="0.1"
-            position="0 0 0.01"
-          ></a-image>
-        </a-plane>
+          src="icons/call.png"
+          width="0.18"
+          height="0.18"
+          position="-0.10 -0.45 0.2"
+        ></a-image>
 
-        <a-plane
+        <a-image
           id="btn-whatsapp"
           class="clickable"
-          position="0.10 -0.45 0.05"
-          width="0.16"
-          height="0.16"
-          color="#25D366"
-        >
-          <a-image
-            src="icons/whatsapp.png"
-            width="0.1"
-            height="0.1"
-            position="0 0 0.01"
-          ></a-image>
-        </a-plane>
+          src="icons/whatsapp.png"
+          width="0.18"
+          height="0.18"
+          position="0.10 -0.45 0.2"
+        ></a-image>
 
-        <a-plane
+        <a-image
           id="btn-instagram"
           class="clickable"
-          position="0.30 -0.45 0.05"
-          width="0.16"
-          height="0.16"
-          color="#e11d48"
-        >
-          <a-image
-            src="icons/instagram.png"
-            width="0.1"
-            height="0.1"
-            position="0 0 0.01"
-          ></a-image>
-        </a-plane> </a-entity
-    ></a-scene>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector("#btn-map").addEventListener("click", () => {
-          window.open("https://maps.google.com/?q=Davanagere", "_blank");
-        });
+          src="icons/instagram.png"
+          width="0.18"
+          height="0.18"
+          position="0.30 -0.45 0.2"
+        ></a-image>
+      </a-entity>
+    </a-scene>
 
-        document.querySelector("#btn-call").addEventListener("click", () => {
-          window.open("tel:9741366349", "_self");
-        });
+    <div id="hint">📷 Point camera at the business card</div>
 
-        document
-          .querySelector("#btn-whatsapp")
-          .addEventListener("click", () => {
-            window.open("https://wa.me/919741366349", "_blank");
-          });
-        alert("Button clicked");
-
-        document
-          .querySelector("#btn-instagram")
-          .addEventListener("click", () => {
-            window.open("https://instagram.com/YOUR_USERNAME", "_blank");
-          });
-      });
-    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const sceneEl = document.querySelector("a-scene");
-        let arSystem;
+        const target = document.querySelector("#card-target");
 
-        sceneEl.addEventListener("loaded", function () {
-          arSystem = sceneEl.systems["mindar-image-system"];
-        });
+        const mapBtn = document.querySelector("#btn-map");
+        const callBtn = document.querySelector("#btn-call");
+        const waBtn = document.querySelector("#btn-whatsapp");
+        const instaBtn = document.querySelector("#btn-instagram");
 
-        const target = document.querySelector("#example-target");
-        const whatsappBtn = document.querySelector("#btn-whatsapp");
-
+        // ENABLE CLICKS ONLY AFTER TARGET IS FOUND
         target.addEventListener("targetFound", () => {
-          console.log("target found – enabling buttons");
+          console.log("Target found – buttons active");
 
-          whatsappBtn.addEventListener("click", () => {
-            console.log("WhatsApp clicked");
+          mapBtn.addEventListener("click", () => {
+            window.open("https://maps.google.com/?q=Davanagere", "_blank");
+          });
+
+          callBtn.addEventListener("click", () => {
+            window.open("tel:9741366349", "_self");
+          });
+
+          waBtn.addEventListener("click", () => {
             window.open("https://wa.me/919741366349", "_blank");
+          });
+
+          instaBtn.addEventListener("click", () => {
+            window.open("https://instagram.com/YOUR_USERNAME", "_blank");
           });
         });
       });
