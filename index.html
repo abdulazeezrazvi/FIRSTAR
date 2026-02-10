@@ -89,46 +89,77 @@
           </a-text>
         </a-plane>
 
-        <!-- ICON BUTTONS (BOTTOM WITH GAP) -->
+        <!-- ICON BUTTONS (BOTTOM ROW) -->
 
         <!-- MAP -->
-        <a-circle
-          radius="0.07"
-          position="-0.25 -0.45 0.01"
+        <a-plane
+          position="-0.30 -0.45 0.02"
+          width="0.16"
+          height="0.16"
           color="#22c55e"
-          onclick="window.location.href = 'https://maps.google.com'"
+          onclick="
+            window.location.href = 'https://maps.google.com/?q=Davanagere'
+          "
         >
-        </a-circle>
+          <a-image
+            src="icons/map.png"
+            width="0.1"
+            height="0.1"
+            position="0 0 0.01"
+          >
+          </a-image>
+        </a-plane>
 
         <!-- CALL -->
-        <a-circle
-          radius="0.07"
-          position="-0.08 -0.45 0.01"
+        <a-plane
+          position="-0.10 -0.45 0.02"
+          width="0.16"
+          height="0.16"
           color="#0ea5e9"
           onclick="window.location.href = 'tel:9741366349'"
         >
-        </a-circle>
+          <a-image
+            src="icons/call.png"
+            width="0.1"
+            height="0.1"
+            position="0 0 0.01"
+          >
+          </a-image>
+        </a-plane>
 
         <!-- WHATSAPP -->
-        <a-circle
-          radius="0.07"
-          position="0.08 -0.45 0.01"
+        <a-plane
+          position="0.10 -0.45 0.02"
+          width="0.16"
+          height="0.16"
           color="#25D366"
           onclick="window.location.href = 'https://wa.me/919741366349'"
         >
-        </a-circle>
+          <a-image
+            src="icons/whatsapp.png"
+            width="0.1"
+            height="0.1"
+            position="0 0 0.01"
+          >
+          </a-image>
+        </a-plane>
 
         <!-- INSTAGRAM -->
-        <a-circle
-          radius="0.07"
-          position="0.25 -0.45 0.01"
+        <a-plane
+          position="0.30 -0.45 0.02"
+          width="0.16"
+          height="0.16"
           color="#e11d48"
-          onclick="window.location.href = 'https://instagram.com'"
+          onclick="window.location.href = 'https://instagram.com/YOUR_USERNAME'"
         >
-        </a-circle>
-      </a-entity>
-    </a-scene>
-
-    <div id="hint">📷 Point camera at the business card</div>
+          <a-image
+            src="icons/instagram.png"
+            width="0.1"
+            height="0.1"
+            position="0 0 0.01"
+          >
+          </a-image>
+        </a-plane> </a-entity
+    ></a-scene>
   </body>
 </html>
