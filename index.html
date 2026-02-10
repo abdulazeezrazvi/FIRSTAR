@@ -155,8 +155,8 @@
         >
           <a-image
             src="icons/instagram.png"
-            width="0.1"
-            height="0.1"
+            width="0.5"
+            height="0.5"
             position="0 0 0.01"
           ></a-image>
         </a-plane> </a-entity
@@ -183,6 +183,28 @@
           .addEventListener("click", () => {
             window.open("https://instagram.com/YOUR_USERNAME", "_blank");
           });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sceneEl = document.querySelector("a-scene");
+        let arSystem;
+
+        sceneEl.addEventListener("loaded", function () {
+          arSystem = sceneEl.systems["mindar-image-system"];
+        });
+
+        const target = document.querySelector("#example-target");
+        const whatsappBtn = document.querySelector("#btn-whatsapp");
+
+        target.addEventListener("targetFound", () => {
+          console.log("target found – enabling buttons");
+
+          whatsappBtn.addEventListener("click", () => {
+            console.log("WhatsApp clicked");
+            window.open("https://wa.me/919741366349", "_blank");
+          });
+        });
       });
     </script>
   </body>
