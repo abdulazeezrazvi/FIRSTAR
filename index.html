@@ -97,79 +97,93 @@
 
         <!-- ICON BUTTONS (BOTTOM ROW) -->
 
-        <!-- MAP -->
         <a-plane
+          id="btn-map"
           class="clickable"
-          position="-0.30 -0.45 0.02"
+          position="-0.30 -0.45 0.05"
           width="0.16"
           height="0.16"
           color="#22c55e"
-          onclick="
-            window.open('https://maps.google.com/?q=Davanagere', '_blank')
-          "
         >
           <a-image
             src="icons/map.png"
             width="0.1"
             height="0.1"
             position="0 0 0.01"
-          >
-          </a-image>
+          ></a-image>
         </a-plane>
 
-        <!-- CALL -->
         <a-plane
+          id="btn-call"
           class="clickable"
-          position="-0.10 -0.45 0.02"
+          position="-0.10 -0.45 0.05"
           width="0.16"
           height="0.16"
           color="#0ea5e9"
-          onclick="window.open('tel:9741366349', '_self')"
         >
           <a-image
             src="icons/call.png"
             width="0.1"
             height="0.1"
             position="0 0 0.01"
-          >
-          </a-image>
+          ></a-image>
         </a-plane>
 
-        <!-- WHATSAPP -->
         <a-plane
+          id="btn-whatsapp"
           class="clickable"
-          position="0.10 -0.45 0.02"
+          position="0.10 -0.45 0.05"
           width="0.16"
           height="0.16"
           color="#25D366"
-          onclick="window.open('https://wa.me/919741366349', '_blank')"
         >
           <a-image
             src="icons/whatsapp.png"
             width="0.1"
             height="0.1"
             position="0 0 0.01"
-          >
-          </a-image>
+          ></a-image>
         </a-plane>
 
-        <!-- INSTAGRAM -->
-        <<a-plane
+        <a-plane
+          id="btn-instagram"
           class="clickable"
-          position="0.30 -0.45 0.02"
+          position="0.30 -0.45 0.05"
           width="0.16"
           height="0.16"
           color="#e11d48"
-          onclick="window.open('https://instagram.com/YOUR_USERNAME', '_blank')"
         >
           <a-image
             src="icons/instagram.png"
             width="0.1"
             height="0.1"
             position="0 0 0.01"
-          >
-          </a-image>
+          ></a-image>
         </a-plane> </a-entity
     ></a-scene>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#btn-map").addEventListener("click", () => {
+          window.open("https://maps.google.com/?q=Davanagere", "_blank");
+        });
+
+        document.querySelector("#btn-call").addEventListener("click", () => {
+          window.open("tel:9741366349", "_self");
+        });
+
+        document
+          .querySelector("#btn-whatsapp")
+          .addEventListener("click", () => {
+            window.open("https://wa.me/919741366349", "_blank");
+          });
+        alert("Button clicked");
+
+        document
+          .querySelector("#btn-instagram")
+          .addEventListener("click", () => {
+            window.open("https://instagram.com/YOUR_USERNAME", "_blank");
+          });
+      });
+    </script>
   </body>
 </html>
