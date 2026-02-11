@@ -27,21 +27,6 @@
         padding: 10px;
         z-index: 999;
       }
-      /* ===== AR BUTTON STYLE SYSTEM ===== */
-
-      .glow-btn {
-        animation: pulseGlow 1.5s infinite alternate;
-      }
-
-      /* Pulse animation */
-      @keyframes pulseGlow {
-        from {
-          transform: scale(1);
-        }
-        to {
-          transform: scale(1.08);
-        }
-      }
     </style>
   </head>
 
@@ -57,6 +42,14 @@
         cursor="fuse: false; rayOrigin: mouse;"
         raycaster="far: ${customFields.libVersion}; objects: .clickable"
       ></a-camera>
+
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: false"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="near: 0; far: 1000; objects: .clickable"
+      >
+      </a-camera>
 
       <!-- IMAGE TARGET -->
       <a-entity mindar-image-target="targetIndex: 0">
@@ -128,26 +121,19 @@
         </a-plane>
 
         <a-plane
+          id="btn-call"
           class="clickable"
-          width="0.18"
-          height="0.18"
-          position="0 0 0.15"
-          material="
-    color:#0ea5e9;
-    shader:standard;
-    metalness:0.5;
-    roughness:0.2;
-    emissive:#0ea5e9;
-    emissiveIntensity:0.5;"
-          animation="property: scale; dir: alternate; dur: 1500; to: 1.08 1.08 1; loop: true"
+          position="-0.10 -0.45 0.05"
+          width="0.16"
+          height="0.16"
+          color="#0ea5e9"
         >
           <a-image
             src="icons/call.png"
-            width="0.12"
-            height="0.12"
+            width="0.1"
+            height="0.1"
             position="0 0 0.01"
-          >
-          </a-image>
+          ></a-image>
         </a-plane>
 
         <a-plane
@@ -182,8 +168,6 @@
           ></a-image>
         </a-plane> </a-entity
     ></a-scene>
-    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#btn-map").addEventListener("click", () => {
