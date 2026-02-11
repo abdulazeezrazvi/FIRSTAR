@@ -99,16 +99,6 @@
             width="1"
           >
           </a-text>
-          <a-plane
-            id="example-plane"
-            class="clickable"
-            color="blue"
-            opacity="0.5"
-            position="0 0 0"
-            height="0.552"
-            width="1"
-            rotation="0 0 0"
-          ></a-plane>
         </a-plane>
 
         <!-- ICON BUTTONS (BOTTOM ROW) -->
@@ -199,34 +189,6 @@
           .addEventListener("click", () => {
             window.open("https://instagram.com/YOUR_USERNAME", "_blank");
           });
-      });
-
-      // detect click event
-      const examplePlane = document.querySelector("#example-plane");
-      examplePlane.addEventListener("click", (event) => {
-        console.log("plane click");
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const sceneEl = document.querySelector("a-scene");
-        let arSystem;
-
-        sceneEl.addEventListener("loaded", function () {
-          arSystem = sceneEl.systems["mindar-image-system"];
-        });
-
-        const target = document.querySelector("#example-target");
-        const whatsappBtn = document.querySelector("#btn-whatsapp");
-
-        target.addEventListener("targetFound", () => {
-          console.log("target found – enabling buttons");
-
-          whatsappBtn.addEventListener("click", () => {
-            console.log("WhatsApp clicked");
-            window.open("https://wa.me/919741366349", "_blank");
-          });
-        });
       });
     </script>
   </body>
