@@ -113,19 +113,26 @@
         </a-plane>
 
         <a-plane
-          id="btn-call"
           class="clickable"
-          position="-0.10 -0.45 0.05"
-          width="0.16"
-          height="0.16"
-          color="#0ea5e9"
+          width="0.18"
+          height="0.18"
+          position="0 0 0.15"
+          material="
+    color:#0ea5e9;
+    shader:standard;
+    metalness:0.5;
+    roughness:0.2;
+    emissive:#0ea5e9;
+    emissiveIntensity:0.5;"
+          animation="property: scale; dir: alternate; dur: 1500; to: 1.08 1.08 1; loop: true"
         >
           <a-image
             src="icons/call.png"
-            width="0.1"
-            height="0.1"
+            width="0.12"
+            height="0.12"
             position="0 0 0.01"
-          ></a-image>
+          >
+          </a-image>
         </a-plane>
 
         <a-plane
